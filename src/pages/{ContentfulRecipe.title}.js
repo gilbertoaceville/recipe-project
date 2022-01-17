@@ -4,6 +4,7 @@ import React from "react"
 import { BsClock, BsClockHistory, BsPeople } from "react-icons/bs"
 import slugify from "slugify"
 import Layout from "../components/layout"
+import SEO from "../components/SEO"
 
 /**
  * //called a file system route api
@@ -30,6 +31,7 @@ const RecipeTemplate = ({ data }, ...props) => {
   const { tags, instructions, ingredients, tools } = content
   return (
     <Layout>
+      <SEO title={title} description={description} />
       <main className="page">
         <div className="recipe-page">
           {/* hero */}

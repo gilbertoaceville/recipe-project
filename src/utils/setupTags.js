@@ -1,5 +1,6 @@
 const setupTags = recipes => {
   const allTags = {}
+
   recipes.forEach(recipe => {
     recipe.content.tags.forEach(tag => {
       if (allTags[tag]) {
@@ -9,14 +10,14 @@ const setupTags = recipes => {
       }
     })
   })
-  //convert allTags back to an array
+  //convert allTags back to array
   const newTags = Object.entries(allTags).sort((a, b) => {
-      const [firstTag] = a;
-      const [secondTag] = b;
-      
-      return firstTag.localeCompare(secondTag);
+    const [firstTag] = a
+    const [secondTag] = b
+    return firstTag.localeCompare(secondTag)
   })
-  return newTags;
+
+  return newTags
 }
 
 export default setupTags

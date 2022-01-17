@@ -1,15 +1,17 @@
 import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import RecipesList from "../components/RecipesList"
+import SEO from "../components/SEO"
 
-const About = ({data}) => {
+const About = ({ data }) => {
   const {
     allContentfulRecipe: { nodes: recipes }, //alias name of recipes for nodes
-  } = data;
+  } = data
   return (
     <Layout>
+      <SEO title="About" />
       <main className="page">
         <section className="about-page">
           <article>
@@ -45,8 +47,8 @@ const About = ({data}) => {
 export const query = graphql`
   {
     allContentfulRecipe(
-      sort: {fields: title, order: ASC}
-      filter: {featured: {eq: true}}
+      sort: { fields: title, order: ASC }
+      filter: { featured: { eq: true } }
     ) {
       nodes {
         cookTime
